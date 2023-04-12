@@ -1,0 +1,219 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.semanticweb.org/maria/ontologies/2023/2/Mineral"
+         xmlns="http://www.semanticweb.org/maria/ontologies/2023/2/Mineral#">
+
+<owl:Ontology rdf:about="http://www.semanticweb.org/maria/ontologies/2023/2/Mineral"/>
+
+<owl:ObjectProperty rdf:about="#UsedIn"/>
+
+<owl:Class rdf:about="#Artificial">
+  <rdfs:subClassOf rdf:resource="#ByFormOfOrigin"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ByFormOfOrigin">
+  <rdfs:subClassOf rdf:resource="#Classification"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ByChemicalComposition">
+  <rdfs:subClassOf rdf:resource="#Classification"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Classification"/>
+
+<owl:Class rdf:about="#Carbonates">
+  <rdfs:subClassOf rdf:resource="#ByChemicalComposition"/>
+</owl:Class>
+
+<owl:Class rdf:about="#FieldOfUsage"/>
+
+<owl:Class rdf:about="#Halides">
+  <rdfs:subClassOf rdf:resource="#ByChemicalComposition"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Minerals"/>
+
+<owl:Class rdf:about="#NativeElements">
+  <rdfs:subClassOf rdf:resource="#ByChemicalComposition"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Organic">
+  <rdfs:subClassOf rdf:resource="#ByFormOfOrigin"/>
+</owl:Class>
+
+<owl:Class rdf:about="#OxidesAndHydroxides">
+  <rdfs:subClassOf rdf:resource="#ByChemicalComposition"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Phosphates">
+  <rdfs:subClassOf rdf:resource="#ByChemicalComposition"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Silicates">
+  <rdfs:subClassOf rdf:resource="#ByChemicalComposition"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Sulfates">
+  <rdfs:subClassOf rdf:resource="#ByChemicalComposition"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Sulfides">
+  <rdfs:subClassOf rdf:resource="#ByChemicalComposition"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Tungstates">
+  <rdfs:subClassOf rdf:resource="#ByChemicalComposition"/>
+</owl:Class>
+
+<Minerals rdf:about="#Amber">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#Organic"/>
+  <UsedIn rdf:resource="#HouseholdGoods"/>
+  <UsedIn rdf:resource="#JewelryBusiness"/>
+</Minerals>
+
+<FieldOfUsage rdf:about="#HouseholdGoods">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</FieldOfUsage>
+
+<FieldOfUsage rdf:about="#JewelryBusiness">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</FieldOfUsage>
+
+<Minerals rdf:about="#Apatite">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#Phosphates"/>
+  <UsedIn rdf:resource="#AsFirtilizer"/>
+  <UsedIn rdf:resource="#Metallurgy"/>
+</Minerals>
+
+<FieldOfUsage rdf:about="#AsFirtilizer">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</FieldOfUsage>
+
+<FieldOfUsage rdf:about="#Metallurgy">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</FieldOfUsage>
+
+<Carbonates rdf:about="#Calcite">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#Minerals"/>
+  <UsedIn rdf:resource="#Chemistry"/>
+  <UsedIn rdf:resource="#Construction"/>
+  <UsedIn rdf:resource="#JewelryBusiness"/>
+  <UsedIn rdf:resource="#Medicine"/>
+  <UsedIn rdf:resource="#Metallurgy"/>
+</Carbonates>
+
+<FieldOfUsage rdf:about="#Chemistry">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</FieldOfUsage>
+
+<FieldOfUsage rdf:about="#Construction">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</FieldOfUsage>
+
+<FieldOfUsage rdf:about="#Medicine">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</FieldOfUsage>
+
+<Minerals rdf:about="#Diamond">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#NativeElements"/>
+  <UsedIn rdf:resource="#Chemistry"/>
+  <UsedIn rdf:resource="#Construction"/>
+  <UsedIn rdf:resource="#JewelryBusiness"/>
+  <UsedIn rdf:resource="#Medicine"/>
+  <UsedIn rdf:resource="#Optics"/>
+</Minerals>
+
+<FieldOfUsage rdf:about="#Optics">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</FieldOfUsage>
+
+<Minerals rdf:about="#Gypsum">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#Sulfates"/>
+  <UsedIn rdf:resource="#Construction"/>
+</Minerals>
+
+<Halides rdf:about="#Halite">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#Minerals"/>
+  <UsedIn rdf:resource="#Chemistry"/>
+</Halides>
+
+<Minerals rdf:about="#Marble">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#Organic"/>
+  <UsedIn rdf:resource="#Construction"/>
+</Minerals>
+
+<Minerals rdf:about="#Opal">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#OxidesAndHydroxides"/>
+  <UsedIn rdf:resource="#Construction"/>
+  <UsedIn rdf:resource="#JewelryBusiness"/>
+</Minerals>
+
+<Minerals rdf:about="#Orthoclase">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#Silicates"/>
+  <UsedIn rdf:resource="#HouseholdGoods"/>
+</Minerals>
+
+<Minerals rdf:about="#Pyrite">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#Sulfides"/>
+  <UsedIn rdf:resource="#Chemistry"/>
+</Minerals>
+
+<Minerals rdf:about="#Quartz">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#OxidesAndHydroxides"/>
+  <UsedIn rdf:resource="#Optics"/>
+</Minerals>
+
+<Artificial rdf:about="#Ruby">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#Minerals"/>
+  <UsedIn rdf:resource="#JewelryBusiness"/>
+  <UsedIn rdf:resource="#Medicine"/>
+</Artificial>
+
+<Artificial rdf:about="#Sapphire">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#Minerals"/>
+  <UsedIn rdf:resource="#Construction"/>
+  <UsedIn rdf:resource="#JewelryBusiness"/>
+</Artificial>
+
+<Minerals rdf:about="#Topaz">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#Organic"/>
+  <UsedIn rdf:resource="#AsFirtilizer"/>
+  <UsedIn rdf:resource="#JewelryBusiness"/>
+</Minerals>
+
+<Artificial rdf:about="#VenetianPearl">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#Minerals"/>
+  <UsedIn rdf:resource="#JewelryBusiness"/>
+</Artificial>
+
+<Minerals rdf:about="#Wolframite">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#Tungstates"/>
+  <UsedIn rdf:resource="#Construction"/>
+  <UsedIn rdf:resource="#Medicine"/>
+</Minerals>
+
+<Minerals rdf:about="#Talcum">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Minerals>
+
+
+</rdf:RDF>
