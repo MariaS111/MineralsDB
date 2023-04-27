@@ -5,6 +5,16 @@ rep = 'http://LAPTOP-FRRSP1GB:7200/repositories/Mineral'
 endpoint = SPARQLWrapper(rep)
 
 
+def execute_query_rel(sourse_query):
+    endpoint.setQuery(sourse_query)
+    endpoint.setReturnFormat(JSON)
+    results = endpoint.query().convert()
+    rez = []
+    for result in results['results']['bindings']:
+        rez.append((result['sub']['value'] + ' ', result['pName']['value'] + ' ', result['obj']['value'] + ' '))
+    return rez
+
+
 def execute_query(sourse_query):
     endpoint.setQuery(sourse_query)
     endpoint.setReturnFormat(JSON)
@@ -19,14 +29,6 @@ query = '''
 SELECT DISTINCT (strafter(str(?class), \'#\') AS ?pName) WHERE {
   ?class a owl:Class .
   FILTER NOT EXISTS { ?class rdfs:subClassOf ?superclass }
-}
-'''
-
-query_add = '''
-PREFIX : <http://www.semanticweb.org/maria/ontologies/2023/2/Mineral#>
-
-INSERT DATA {
-  _:b1 foaf:name "John Smith" .
 }
 '''
 
@@ -130,10 +132,47 @@ query_org = """
 lst_org = list(execute_query(query_org))
 print(lst_org)
 
+t = 'Topaz'
+
+rels = """
+      PREFIX : <http://www.semanticweb.org/maria/ontologies/2023/2/Mineral#>
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
+      SELECT DISTINCT (strafter(str(?p), \'#\') AS ?pName) (strafter(str(?subject), \'#\') AS ?sub) (strafter(str(?object), \'#\') AS ?obj)
+      WHERE { 
+      ?subject ?p ?object .
+      ?p rdf:type owl:ObjectProperty.
+      FILTER(contains(lcase(str(?subject)), lcase(STR("%s")))).
+      } 
+""" % t
+
+lst_rels = list(execute_query_rel(rels))
+print(lst_rels)
 
 
+rel = """
+      PREFIX : <http://www.semanticweb.org/maria/ontologies/2023/2/Mineral#>
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+      SELECT DISTINCT (strafter(str(?p), \'#\') AS ?pName) 
+      WHERE { 
+      ?p rdf:type owl:ObjectProperty.
+      } 
+"""
 
+lst_rel = list(execute_query(rel))
+print(lst_rel)
 
+ent = '''
+ PREFIX : <http://www.semanticweb.org/maria/ontologies/2023/2/Mineral#>
+      PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT DISTINCT (strafter(str(?p), \'#\') AS ?pName) 
+WHERE {
+ ?p a owl:NamedIndividual .
+}
+'''
+
+lst_ent = list(execute_query(ent))
+print(lst_ent)
 
 # g = Graph()
 # g.parse("http://localhost:8890/DAV/temp/min.owl")

@@ -34,7 +34,7 @@
     <property name="geometry">
      <rect>
       <x>400</x>
-      <y>220</y>
+      <y>200</y>
       <width>481</width>
       <height>91</height>
      </rect>
@@ -93,10 +93,10 @@ border-radius: 5px;
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>269</x>
-      <y>299</y>
-      <width>721</width>
-      <height>281</height>
+      <x>260</x>
+      <y>290</y>
+      <width>691</width>
+      <height>461</height>
      </rect>
     </property>
     <layout class="QGridLayout" name="gridLayout"/>
